@@ -1,5 +1,6 @@
+##We quantify RNAseq samples with Salmon, skipping the ones that are already done or missing FASTQ files
 #!/bin/bash
-# Similar to 04 but more robust: will resume only missing SRRs
+# It's similar to the 04 file, but a bit more robust, so it will resume only missing SRRs
 set -euo pipefail
 PROJECT_ROOT="$HOME/Documentos/Bioinfo_projects/rna-seq-egfr"
 FASTQ_DIR="$PROJECT_ROOT/data/fastq/raw"
