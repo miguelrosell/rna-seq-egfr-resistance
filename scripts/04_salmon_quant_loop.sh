@@ -1,3 +1,4 @@
+#Now in this step, we quantify RNA-seq reads per sample using Salmon, producing transcript-level abundances!!
 #!/bin/bash
 set -euo pipefail
 PROJECT_ROOT="$HOME/Documentos/Bioinfo_projects/rna-seq-egfr"
