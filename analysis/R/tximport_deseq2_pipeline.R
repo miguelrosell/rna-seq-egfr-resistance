@@ -1,5 +1,9 @@
-# tximport + DESeq2 pipeline
-# Run this in the analysis/r/ folder or adjust paths
+# tximport + DESeq2 pipeline: THIS IS THE R CODE I USED ONCE I HAD THE quants.sf FILES FROM SALMON.
+# Use tximport with the Gencode annotation file you downloaded.
+# tximport converts transcript-level data (from Salmon) to gene-level counts, summing/weighting all transcripts per gene.
+# The result is a gene-by-sample count matrix (genes in rows, samples in columns).
+# This matrix is prepared for DESeq2 (although we haven't run DESeq2 yet in the script), allowing downstream differential expression analysis.
+# Run this in the analysis/r/ folder or adjust paths!!¡¡
 
 library(tximport)
 library(readr)
