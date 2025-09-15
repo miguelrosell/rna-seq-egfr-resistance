@@ -1,3 +1,4 @@
+#WIth this we build a Salmon index from the transcriptome so we can quickly quantify RNA-seq reads later on
 #!/bin/bash
 set -euo pipefail
 PROJECT_ROOT="$HOME/Documentos/Bioinfo_projects/rna-seq-egfr"
