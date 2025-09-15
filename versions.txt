@@ -1,0 +1,25 @@
+# salmon --version
+salmon 1.10.2
+
+# fasterq-dump --version
+fasterq-dump : 3.0.3 ( 3.0.2 )
+
+Gencode version
+v49
+
+# R and Rstudio version                                         
+platform       x86_64-pc-linux-gnu
+arch           x86_64
+os             linux-gnu
+system         x86_64, linux-gnu
+status
+major          4
+minor          5.0
+year           2025
+month          04
+day            11
+svn rev        88135
+language       R 
+version.string R version 4.5.0 (2025-04-11)
+nickname       How About a Twenty-Six
+
