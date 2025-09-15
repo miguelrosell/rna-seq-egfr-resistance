@@ -1,10 +1,11 @@
-# Plot volcano and extract top genes
+#We load Salmon quant files, then we summarize transcripts to genes with tximport, and create DESeq2 object, run differential expression analysis, and save results.
+#Firstly, plot volcano and extracting of top genes
 library(ggplot2)
 library(dplyr)
 project_root <- file.path(Sys.getenv("HOME"), "Documentos", "Bioinfo_projects", "rna-seq-egfr")
 res <- read.csv(file.path(project_root, "analysis", "results", "deseq2_results.csv"), row.names=1)
 
-# Volcano: protect against padj == 0 -> add small epsilon
+#volcano: protect against padj == 0 -> add small epsilon
 res$padj[is.na(res$padj)] <- 1
 res$minusLog10FDR <- -log10(res$padj + 1e-300)
 
@@ -18,11 +19,11 @@ p <- ggplot(as.data.frame(res), aes(x=log2FoldChange, y=minusLog10FDR)) +
 
 ggsave(filename=file.path(project_root, "analysis", "results", "figures", "volcano.png"), plot=p, width=8, height=6)
 
-# Significant genes
+#the significant genes
 resSig <- subset(res, padj < 0.05 & abs(log2FoldChange) > 1)
 write.csv(resSig, file = file.path(project_root, "analysis", "results", "deseq_significant.csv"))
 
-# Top 20 by padj
+#getting the top 20 by padj value, which will help us find the most 20 relevant ones
 res_top20 <- as.data.frame(resSig) %>% arrange(padj) %>% head(20)
 res_top20$direction <- ifelse(res_top20$log2FoldChange > 0, "Up in Resistant", "Up in Sensitive")
 write.csv(res_top20, file=file.path(project_root, "analysis", "results", "top20_genes.csv"))
