@@ -1,0 +1,14 @@
+# gencode.v49.annotation.gtf.gz
+# gencode.v49.transcripts.fa.gz
+
+#THIS ARE THE ANNOTATION (GTF) AND TRANSCRIPT (FASTA) REFERENCE FILES THAT I USED FOR MY PROJECT, AND YOU CAN DOWNLOAD THEM WITH THESE COMANDS IN BASH: 
+#!/bin/bash
+# Download Gencode reference files
+mkdir -p data/reference
+cd data/reference
+
+# GTF annotation
+wget -c ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.annotation.gtf.gz
+
+# Transcripts fasta
+wget -c ftp://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.transcripts.fa.gz
